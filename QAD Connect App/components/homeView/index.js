@@ -1,7 +1,10 @@
 'use strict';
 
 app.homeView = kendo.observable({
-    onShow: function() {},
+    onShow: function() {
+        
+        
+    },
     afterShow: function() {}
 });
 
@@ -14,7 +17,7 @@ app.homeView = kendo.observable({
             transport: {
                 read: {
                     type: "GET",
-            		headers: {"Authorization" : "Basic " + btoa("mfg:")},
+            		headers: {"Authorization" : "Basic " + btoa('mfg:')},
                     url: dataProvider.url
                 }
             },

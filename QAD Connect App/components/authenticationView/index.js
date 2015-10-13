@@ -46,15 +46,15 @@ app.authenticationView = kendo.observable({
             email: '',
             password: '',
             validateData: function(data) {
-                if (!data.email) {
-                    alert('Missing email');
-                    return false;
-                }
+//                if (!data.email) {
+//                    alert('Missing email');
+//                    return false;
+//                }
 
-                if (!data.password) {
-                    alert('Missing password');
-                    return false;
-                }
+//                if (!data.password) {
+//                    alert('Missing password');
+//                    return false;
+//                }
 
                 return true;
             },
@@ -67,7 +67,8 @@ app.authenticationView = kendo.observable({
                     return false;
                 }
 
-                provider.Users.login(email, password, successHandler, init);
+                // provider.Users.login(email, password, successHandler, init);
+                app.mobileApp.navigate('components/homeView/view.html');
             }
         });
 

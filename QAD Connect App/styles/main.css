@@ -108,6 +108,8 @@
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
 
+.inboxboldText { font-weight: 600; }
+.inboxBoldCursiveText { font-weight: 600; font-style: italic; }
 
 /* END_CUSTOM_CODE_kendoUiMobileApp */
 

@@ -1,8 +1,14 @@
 'use strict';
 
 app.dataListView = kendo.observable({
+    domainCode: '',
+    entityCode: '',
     onShow: function() {},
-    afterShow: function() {}
+    afterShow: function() {},
+    listShow: function(e) {
+        app.dataListView.set('domainCode', e.view.params.domainCode);
+        app.dataListView.set('entityCode', e.view.params.entityCode);
+   	}
 });
 
 // START_CUSTOM_CODE_dataListView
@@ -13,18 +19,29 @@ app.dataListView = kendo.observable({
             type: 'json',
             transport: {
                 read: {
+                    type: "GET",
+            		headers: {"Authorization" : "Basic " + btoa("mfg:")},
                     url: dataProvider.url
                 }
             },
 
             schema: {
-                data: '',
+                data: 'data',
                 model: {
-                    fields: {
-                        'Text': {
-                            field: 'Text',
+                    id: 'notificationId',
+                    fields: {                        
+                        'urlText': {
+                            field: 'urlText',
                             defaultValue: ''
                         },
+               			'text': {
+                            field: 'text',
+                            defaultValue: ''
+                        },
+            			'timestamp': {
+                            field: 'timestamp',
+                            defaultValue: ''
+                        }                         
                     }
                 }
             },
@@ -39,14 +56,13 @@ app.dataListView = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = dataListViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                if (!itemModel.Text) {
-                    itemModel.Text = String.fromCharCode(160);
-                }
                 dataListViewModel.set('currentItem', itemModel);
             },
             currentItem: null
         });
 
+    var dataSourceOptions = dataListViewModel.dataSourceOptions;
+    
     parent.set('dataListViewModel', dataListViewModel);
 })(app.dataListView);
 

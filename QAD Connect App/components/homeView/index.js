@@ -13,25 +13,34 @@ app.homeView = kendo.observable({
             type: 'json',
             transport: {
                 read: {
+                    type: "GET",
+            		headers: {"Authorization" : "Basic " + btoa("mfg:")},
                     url: dataProvider.url
                 }
             },
-
             schema: {
-                data: '',
+                data: 'data.workspaceNotifications',
                 model: {
+                    id: 'workspaceName',
                     fields: {
-                        'Text': {
-                            field: 'Text',
+                        'headerTitle': {
+                            field: 'headerTitle',
                             defaultValue: ''
                         },
+                        'unreadNotifications': {
+                            field: 'unreadNotifications',
+                            defaultValue: 0
+                        }
                     }
                 }
             },
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         homeViewModel = kendo.observable({
-            dataSource: dataSource
+            dataSource: dataSource,
+            itemClick: function(e) {
+                app.mobileApp.navigate('#components/dataListView/view.html?domainCode=' + e.dataItem.domainCode + '&entityCode=' + e.dataItem.entityCode);
+            }
         });
 
     parent.set('homeViewModel', homeViewModel);

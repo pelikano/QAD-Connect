@@ -2,7 +2,7 @@
 
 (function() {
     app.data.notificationList = {
-        url: 'http://vmfvp02:22010/qad-central/api/qracore/inboxdata?domainCode=Domain1&entityCode=1000&loadAll=true'
+        url: 'http://vmfvp02:22010/qad-central/api/qracore/inboxnotifications?loadAll=true&page=1&pageSize=10'
     };
 
 }());

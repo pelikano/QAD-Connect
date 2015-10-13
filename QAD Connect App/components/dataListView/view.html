@@ -1,5 +1,13 @@
-<div data-role="view" data-title="Notification List" data-layout="main-nonav" data-model="app.dataListView" data-show="app.dataListView.onShow" data-after-show="app.dataListView.afterShow">
+<div data-role="view" data-title="Notification List" data-layout="main-nonav" data-model="app.dataListView" data-show="app.dataListView.onShow" data-after-show="app.dataListView.afterShow" data-bind="events: { show: listShow }">
     <!-- START_CUSTOM_CODE_dataListView -->
+    
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <a data-role="backbutton" data-align="left">Back</a>
+        </div>
+    </header> 
+    <h1>NOTIFICATIONS</h1>
+    
     <!-- END_CUSTOM_CODE_dataListView -->
     <ul data-role="listview" data-style="inset" data-template="dataListViewModelTemplate" data-bind="{ source: dataListViewModel.dataSource, events: {click: dataListViewModel.itemClick}}" data-pull-to-refresh="true" data-endless-scroll="false">
     </ul>
@@ -7,8 +15,9 @@
     <!-- END_CUSTOM_CODE_dataListViewModel -->
     <script type="text/x-kendo-template" id="dataListViewModelTemplate">
         <div class="image-with-text">
-            <h3>#: data['Text'] #</h3>
-
+            <h3>#: data['urlText'] #</h3>
+            <h3>#: data['timestamp'] #</h3>
+            <p>#= data['text'] #</p>
         </div>
     </script>
 </div>

@@ -1,0 +1,48 @@
+{
+  "ProjectName": "QAD Connect App",
+  "ProjectGuid": "643c1582-a2ca-41d7-a24a-85516697c00e",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.QADConnectApp",
+  "DisplayName": "QAD Connect App",
+  "Author": "",
+  "Description": "QAD Connect App",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{1c7c1077-012e-41d5-9030-0359b7039a0c}",
+  "WP8ProductID": "{f0872889-a32f-4b25-9eb6-a8aba3814910}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.QADConnectApp",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "org.apache.cordova.network-information"
+  ]
+}

@@ -1,7 +1,16 @@
 <div data-role="view" data-title="Authentication" data-layout="main-nonav" data-model="app.authenticationView" data-show="app.authenticationView.onShow" data-after-show="app.authenticationView.afterShow">
+ 
+    
     <div class="signin-view">
+         <div class="qadLogo" align="center">
+                       <a><img src="resources/img/QAD_shad.png" height="120px" width="120px" ></a>
+        </div>
+        <div class="title"  >
+                        <label>Sign in to</br> QAD Connect</label>
+        </div>
         <form>
             <ul data-role="listview" data-style="inset">
+
                 <li>
                     <label>Username
                         <input type="email" data-bind="value: authenticationViewModel.email" required autofocus>
@@ -22,7 +31,8 @@
     </div>
     <div class="offline" align="center" style="display:none;">
         You are currently offline. Before using this app in offline mode you must initialize it while you are online
-    </div>
+    </div>   
+ 
     <!-- START_CUSTOM_CODE_authenticationView -->
     <!-- END_CUSTOM_CODE_authenticationView -->
 </div>

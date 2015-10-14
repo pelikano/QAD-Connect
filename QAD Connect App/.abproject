@@ -3,7 +3,7 @@
   "ProjectGuid": "643c1582-a2ca-41d7-a24a-85516697c00e",
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.QADConnectApp",
-  "DisplayName": "QAD Connect App",
+  "DisplayName": "QAD Connect App2",
   "Author": "",
   "Description": "QAD Connect App",
   "BundleVersion": "1.0",
@@ -44,5 +44,6 @@
   ],
   "CorePlugins": [
     "org.apache.cordova.network-information"
-  ]
+  ],
+  "iOSDeploymentTarget": "6.0"
 }

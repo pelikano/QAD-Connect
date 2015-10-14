@@ -1,10 +1,21 @@
 <div data-role="view" data-title="Workspace List" data-layout="main-nonav" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow">
-    <ul data-role="listview" data-style="inset" data-template="homeViewModelTemplate" data-bind="{ source: homeViewModel.dataSource, events: {click: homeViewModel.itemClick}}" data-pull-to-refresh="true" data-endless-scroll="false">
+    <ul data-role="listview" data-style="inset" data-template="homeViewModelTemplate" 
+        data-bind="{ source: homeViewModel.dataSource, events: {click: homeViewModel.itemClick}}" 
+        data-pull-to-refresh="true" data-endless-scroll="false">
     </ul>
     <script type="text/x-kendo-template" id="homeViewModelTemplate">
-        <div class="image-with-text">
-            <h3>#: data['headerTitle'] #</h3> 
-            <h3>#: data['unreadNotifications'] #</h3>
-        </div>
+        <a href="">#: data['headerTitle'] #      #: data['unreadNotifications'] # </a> 
     </script>
+    
+    <ul data-role="listview">
+    <li>
+        <a href="settings.html">Settings</a>
+    </li>
+    <li>
+        <a href="favorites.html">Favorites</a>
+    </li>
+    <li>
+        <a href="about.html">About</a>
+    </li>
+</ul>
 </div>

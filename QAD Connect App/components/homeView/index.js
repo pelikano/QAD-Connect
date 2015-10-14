@@ -14,7 +14,10 @@ app.homeView = kendo.observable({
             transport: {
                 read: {
                     type: "GET",
-            		headers: {"Authorization" : "Basic " + btoa("mfg:")},
+            		//headers: {"Authorization" : "Basic " + btoa("mfg:")},
+                    beforeSend: function(req) {
+                        req.setRequestHeader('Authorization', "Basic " + btoa(localStorage.getItem("user") + ":" + localStorage.getItem("password")));
+                    },
                     url: dataProvider.url
                 }
             },
@@ -39,7 +42,10 @@ app.homeView = kendo.observable({
         homeViewModel = kendo.observable({
             dataSource: dataSource,
             itemClick: function(e) {
-                app.mobileApp.navigate('#components/dataListView/view.html?domainCode=' + e.dataItem.domainCode + '&entityCode=' + e.dataItem.entityCode);
+                localStorage.setItem("domainCode", e.dataItem.domainCode);
+                localStorage.setItem("entityCode", e.dataItem.entityCode);
+                
+                app.mobileApp.navigate('#components/dataListView/view.html');
             }
         });
 

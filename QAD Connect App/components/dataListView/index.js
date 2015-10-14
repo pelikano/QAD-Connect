@@ -5,10 +5,7 @@ app.dataListView = kendo.observable({
     entityCode: '',
     onShow: function() {},
     afterShow: function() {},
-    listShow: function(e) {
-        app.dataListView.set('domainCode', e.view.params.domainCode);
-        app.dataListView.set('entityCode', e.view.params.entityCode);
-   	}
+    listShow: function(e) {}
 });
 
 // START_CUSTOM_CODE_dataListView
@@ -20,7 +17,10 @@ app.dataListView = kendo.observable({
             transport: {
                 read: {
                     type: "GET",
-            		headers: {"Authorization" : "Basic " + btoa("mfg:")},
+                    beforeSend: function(req, settings) {
+                        req.setRequestHeader('Authorization', "Basic " + btoa(localStorage.getItem("user") + ":" + localStorage.getItem("password")));
+                        settings.url += '&domainCode=' + localStorage.getItem("domainCode") + '&entityCode=' + localStorage.getItem("entityCode");
+                    },
                     url: dataProvider.url
                 }
             },

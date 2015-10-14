@@ -71,7 +71,14 @@ app.authenticationView = kendo.observable({
                 localStorage.setItem('pass', '');
                 
                 // provider.Users.login(email, password, successHandler, init);
-                app.mobileApp.navigate('components/homeView/view.html');
+                localStorage.setItem("user",  email);
+                localStorage.setItem("password", password);
+                
+                if (localStorage.getItem("domainCode") === undefined && localStorage.getItem("entityCode") === undefined){
+                    app.mobileApp.navigate('components/homeView/view.html');
+                }
+                
+                app.mobileApp.navigate('#components/dataListView/view.html');
             }
         });
 
